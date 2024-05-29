@@ -38,7 +38,8 @@ return {
                 "emmet_ls",
                 "prismals",
                 "pyright",
-                "glint",
+                "clangd",
+                -- "glint",
             },
         })
 
@@ -51,6 +52,7 @@ return {
                 "gofumpt",
                 "pylint",
                 "eslint_d",
+                "clang-format",
             },
         })
     end,
