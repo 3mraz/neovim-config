@@ -3,7 +3,6 @@ vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 
 keymap.set("i", "jk", "<esc>l", { desc = "exit insert mode with jk" })
-keymap.set("v", "jk", "<esc>l", { desc = "exit insert mode with jk" })
 
 keymap.set("n", "<ESC>", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "<leader>v", "<c-v>")
@@ -13,8 +12,10 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
-keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decrement
+keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
+keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })
+keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Copy to system clipboard" })
+keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from system clipboard" })
 
 -- window management
 -- keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically

@@ -12,14 +12,16 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
 opt.wrap = false
+opt.linebreak = true
+opt.conceallevel = 2
 
 -- Cursor
 opt.guicursor = {
-  "n-v-c-i:block",
-  "r-cr:hor20",
-  "o:hor50",
-  "a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
-  "sm:block-blinkwait175-blinkoff150-blinkon175",
+	"n-v-c-i:block",
+	"r-cr:hor20",
+	"o:hor50",
+	"a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor",
+	"sm:block-blinkwait175-blinkoff150-blinkon175",
 }
 
 -- search settings
@@ -38,7 +40,7 @@ opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard = "unnamedplus" -- use system clipboard as default register
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
