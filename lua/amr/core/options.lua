@@ -1,7 +1,6 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
 local opt = vim.opt
-
 opt.relativenumber = true
 opt.number = true
 
@@ -11,9 +10,10 @@ opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 
-opt.wrap = false
+opt.wrap = true
 opt.linebreak = true
 opt.conceallevel = 2
+opt.undofile = true
 
 -- Cursor
 opt.guicursor = {

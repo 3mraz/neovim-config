@@ -1,7 +1,9 @@
+-- return {}
 return {
-	"williamboman/mason.nvim",
+	"mason-org/mason.nvim",
+	version = "^1.0.0",
 	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
+		{ "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
@@ -13,33 +15,29 @@ return {
 
 		local mason_tool_installer = require("mason-tool-installer")
 
-		-- enable mason and configure icons
-		mason.setup({
-			ui = {
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
-			},
-		})
+		mason.setup()
 
+		local lsps = {
+			"ts_ls",
+			"intelephense",
+			"html",
+			"gopls",
+			"cssls",
+			"tailwindcss",
+			"lua_ls",
+			"emmet_ls",
+			"prismals",
+			"pyright",
+			"clangd",
+			"htmx",
+			"harper_ls",
+			"ltex",
+		}
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
-			ensure_installed = {
-				"ts_ls",
-				"html",
-				"gopls",
-				"cssls",
-				"tailwindcss",
-				"lua_ls",
-				"emmet_ls",
-				"prismals",
-				"pyright",
-				"clangd",
-				"htmx",
-				-- "glint",
-			},
+			automatic_installation = lsps,
+			ensure_installed = lsps,
+			automatic_enable = true,
 		})
 
 		mason_tool_installer.setup({
@@ -54,6 +52,9 @@ return {
 				"pylint",
 				"eslint_d",
 				"clang-format",
+				"bibtex-tidy",
+				"harper_ls",
+				"bibtex-tidy",
 			},
 		})
 	end,
